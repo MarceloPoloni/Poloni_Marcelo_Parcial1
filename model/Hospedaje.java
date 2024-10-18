@@ -33,12 +33,13 @@ public class Hospedaje extends Servicio {
         this.precioPorNoche = precioPorNoche;
     }
 
-    // metodos
+    // metodo para calcular el precio y si es que esta en promocion
     @Override
     public double calcularPrecioFinal(LocalDate dia) {
         if (enPromocion && (dia.getDayOfWeek() != DayOfWeek.SATURDAY && dia.getDayOfWeek() != DayOfWeek.SUNDAY)) {
             return precioPorNoche * (1 - porcentajeDescuento / 100);
         }
+        // en caso de no estar en promocion retorna el precio por noche
         return precioPorNoche;
     }
     

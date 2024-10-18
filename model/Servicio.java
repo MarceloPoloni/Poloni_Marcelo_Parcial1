@@ -11,6 +11,7 @@ public abstract class Servicio {
 
     // constructor
     public Servicio(String codServicio, double porcentajeDescuento, boolean enPromocion) throws Exception {
+        // aca verifico que tenga si o si 6 caracteres
         if (codServicio.length() != 6) {
             throw new Exception("El código de servicio debe tener 6 caracteres.Reingrese porfavor");
         }
@@ -35,7 +36,7 @@ public abstract class Servicio {
     public void setPorcentajeDescuento(double porcentajeDescuento) {
         this.porcentajeDescuento = porcentajeDescuento;
     }
-
+    // verifico si esta en promocion
     public boolean isEnPromocion() {
         return enPromocion;
     }
@@ -44,7 +45,7 @@ public abstract class Servicio {
         this.enPromocion = enPromocion;
     }
 
-    // metodo
+    // es un metodo abstracto para calcular el precio final segun la fecha
     public abstract double calcularPrecioFinal(LocalDate dia);
 
 }

@@ -9,11 +9,11 @@ public class Sistema {
     // Atributo 
     private List<Servicio> lstServicio;
 
-    // Constructores 
+    // Constructores , inicializa la lista de servicios con una lista proporcionada
     public Sistema(List<Servicio> lstServicio) {
         this.lstServicio = lstServicio;
     }
-
+    // inicializa la lista de servicios como una nueva ArrayList vacía
     public Sistema() {
         lstServicio = new ArrayList<>();
     }
@@ -31,16 +31,18 @@ public class Sistema {
     }
 
 
-    // Métodos
+    // ----------Métodos-------
+    // busca un servicio por codigo y despues lo retorna
     public Servicio traerServicio(String codServicio) {
         for (Servicio s : lstServicio) {
             if (s.getCodServicio().equals(codServicio)) { 
                 return s;
             }
         }
-        return null; 
+        return null; // en caso de no encontrarlo , null
     }
-
+    // retorna una lista de servicios según su estado de promoción
+   
     public List<Servicio> traerServicio(boolean enPromocion) {
         List<Servicio> result = new ArrayList<>();
         for (Servicio s : lstServicio) {
@@ -50,7 +52,7 @@ public class Sistema {
         }
         return result; 
     }
-
+    // retorna una lista de servicios según su estado de promoción y un día específico
     public List<Servicio> traerServicio(boolean enPromocion, LocalDate dia) {
         List<Servicio> result = new ArrayList<>();
         for (Servicio s : lstServicio) {
@@ -60,7 +62,7 @@ public class Sistema {
         }
         return result; 
     }
-
+    // agrega un servicio de gastronomía a la lista
     public boolean agregarGastronomia(String codServicio, double porcentajeDescuento, boolean enPromocion, String gastronomia, double precio, int diaSemDesc) throws Exception {
         if (traerServicio(codServicio) != null) {
             throw new Exception("El servicio ya existe.");         }
@@ -68,7 +70,7 @@ public class Sistema {
         lstServicio.add(gastronomiaServicio);
         return true;
     }
-
+    // agrega un servicio de hospedaje a la lista
     public boolean agregarHospedaje(String codServicio, double porcentajeDescuento, boolean enPromocion, String hospedaje, double precioPorNoche) throws Exception {
         if (traerServicio(codServicio) != null) {
             throw new Exception("El servicio ya existe."); 
