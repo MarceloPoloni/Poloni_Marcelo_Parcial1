@@ -41,17 +41,17 @@ public class Hospedaje extends Servicio {
         }
         return precioPorNoche;
     }
-
     
+    // to string
     @Override
-public String toString() {
-    return "Hospedaje{" +
-            "codServicio='" + codServicio + '\'' +
-            ", porcentajeDescuento=" + porcentajeDescuento +
-            ", enPromocion=" + enPromocion +
-            ", hospedaje='" + hospedaje + '\'' +
-            ", precioPorNoche=" + precioPorNoche +
-            '}';
-}
+    public String toString() {
+        return "Hospedaje{"
+                + "codServicio='" + codServicio + '\''
+                + ", porcentajeDescuento=" + porcentajeDescuento
+                + ", enPromocion=" + enPromocion
+                + ", hospedaje='" + hospedaje + '\''
+                + ", precioPorNoche=" + precioPorNoche
+                + '}';
+    }
 
 }

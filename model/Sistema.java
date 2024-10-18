@@ -9,7 +9,7 @@ public class Sistema {
     // Atributo 
     private List<Servicio> lstServicio;
 
-    // Constructor 
+    // Constructores 
     public Sistema(List<Servicio> lstServicio) {
         this.lstServicio = lstServicio;
     }

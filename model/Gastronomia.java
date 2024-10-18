@@ -41,7 +41,7 @@ public class Gastronomia extends Servicio {
     public void setDiaSemDesc(int diaSemDesc) {
         this.diaSemDesc = diaSemDesc;
     }
-
+    // metodos
     @Override
     public double calcularPrecioFinal(LocalDate dia) {
         if (enPromocion && dia.getDayOfWeek().getValue() == diaSemDesc) {
@@ -49,7 +49,7 @@ public class Gastronomia extends Servicio {
         }
         return precio;
     }
-
+    // to string
     @Override
 public String toString() {
     return "Gastronomia{" +
